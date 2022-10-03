@@ -6,7 +6,7 @@ const Title = props => {
   const login = async () => {
     try {
       const data = {
-        email: 'ianat4@wordup.com.tw',
+        email: 'test@test.com.tw',
         password: '123123211312',
       };
       let res = await axios.request({
@@ -14,16 +14,11 @@ const Title = props => {
         method: 'POST',
         data,
       });
-      // console.log('@@@@ res', res);
       let resData = res.data;
       console.log('resData', resData);
-      // let res = await fetch("/api/users");
-      // let data = await res.json();
     } catch (error) {
       console.log('error', error);
       console.log('error.message', error.message);
-      // console.log('error.data.error', error.data.error)
-      // console.log('error.response.data.error', error.response.data.error);
     }
   };
 
