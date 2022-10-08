@@ -2,6 +2,8 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import axios from 'axios';
 
+export const axiosInstance = axios;
+
 const Title = props => {
   const login = async () => {
     try {
@@ -9,8 +11,10 @@ const Title = props => {
         email: 'test@test.com.tw',
         password: '123123211312',
       };
-      let res = await axios.request({
-        url: 'https://api-staging.wordup.com.tw/api/v1/auth/sign_in',
+      let res = await axiosInstance.request({
+        // baseURL: 'http://localhost:3000',
+        baseURL: 'https://api-staging.wordup.com.tw',
+        url: '/api/v1/auth/sign_in',
         method: 'POST',
         data,
       });
